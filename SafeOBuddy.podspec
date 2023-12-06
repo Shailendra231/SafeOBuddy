@@ -6,28 +6,29 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
 
 
-  spec.name         = "SafeOBuddy"
-  spec.version      = "1.0.1"
-  spec.summary      = "It is a custom framework of Safeobuddy"
-  spec.description  = "It is a custom framework of Safeobuddy. This sdk is for digital locks"
+  s.name         = "SafeOBuddy"
+  s.version      = "1.0.2"
+  s.summary      = "It is a custom framework of Safeobuddy"
+  s.description  = "It is a custom framework of Safeobuddy. This sdk is for digital locks"
 
-  spec.homepage     = "https://github.com/Shailendra231/SafeOBuddy"
-  spec.license      = "MIT"
+  s.homepage     = "https://github.com/Shailendra231/SafeOBuddy"
 
-  spec.author      = { "Shailendra Kumar Ram" => "ramkumarshailendra@gmail.com" }
+  s.license      = "MIT"
 
-  spec.platform     = :ios, "12"
+  s.author      = { "Shailendra Kumar Ram" => "ramkumarshailendra@gmail.com" }
 
-  spec.source       = { :git => "https://github.com/Shailendra231/SafeOBuddy.git", :tag => "1.0.1" }
+  s.platform     = :ios, "12"
 
-  spec.static_framework = true
+  s.source       = { :git => "https://github.com/Shailendra231/SafeOBuddy.git", :tag => "1.0.2" }
 
-  spec.source_files  = "SafeOBuddy/**/*"
+  s.static_framework = true
 
-  spec.dependency "TTLock"
+  s.source_files  = "SafeOBuddy/**/*"
+
+  s.dependency "TTLock"
   
   # spec.framework  = "TTLockFramework"
 
