@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBE776B62B20AC6800669EDA /* TTLock.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BBE776B42B20AC6800669EDA /* TTLock.podspec */; };
-		BBE777392B20AD0100669EDA /* TTLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE776B32B20AC6800669EDA /* TTLock.framework */; };
-		BBE7773A2B20AD0100669EDA /* TTLock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBE776B32B20AC6800669EDA /* TTLock.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8C940BD7786B24D266172D71 /* Pods_SafeOBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC584F9DDE7772DEE03FB338 /* Pods_SafeOBuddy.framework */; };
 		BBE777B22B20AEA600669EDA /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7773C2B20AEA300669EDA /* Rabbit.swift */; };
 		BBE777B32B20AEA600669EDA /* Data Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7773D2B20AEA300669EDA /* Data Conversion.swift */; };
 		BBE777B42B20AEA600669EDA /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7773E2B20AEA300669EDA /* DigestType.swift */; };
@@ -133,13 +131,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BBE7773B2B20AD0100669EDA /* Embed Frameworks */ = {
+		BBE778412B20BA5400669EDA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BBE7773A2B20AD0100669EDA /* TTLock.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,9 +144,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		60537F06555620048134EF10 /* Pods-SafeOBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeOBuddy.debug.xcconfig"; path = "Target Support Files/Pods-SafeOBuddy/Pods-SafeOBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		AA2FA0BAB5463A557736537A /* Pods-SafeOBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeOBuddy.release.xcconfig"; path = "Target Support Files/Pods-SafeOBuddy/Pods-SafeOBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		AC584F9DDE7772DEE03FB338 /* Pods_SafeOBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeOBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE776A82B20AC1C00669EDA /* SafeOBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SafeOBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBE776B32B20AC6800669EDA /* TTLock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TTLock.framework; sourceTree = "<group>"; };
-		BBE776B42B20AC6800669EDA /* TTLock.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TTLock.podspec; sourceTree = "<group>"; };
 		BBE7773C2B20AEA300669EDA /* Rabbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rabbit.swift; sourceTree = "<group>"; };
 		BBE7773D2B20AEA300669EDA /* Data Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data Conversion.swift"; sourceTree = "<group>"; };
 		BBE7773E2B20AEA300669EDA /* DigestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigestType.swift; sourceTree = "<group>"; };
@@ -277,7 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE777392B20AD0100669EDA /* TTLock.framework in Frameworks */,
+				8C940BD7786B24D266172D71 /* Pods_SafeOBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,10 +285,10 @@
 		BBE7769E2B20AC1C00669EDA = {
 			isa = PBXGroup;
 			children = (
-				BBE776B22B20AC6800669EDA /* TTLockFrameworks */,
 				BBE776AA2B20AC1C00669EDA /* SafeOBuddy */,
 				BBE776A92B20AC1C00669EDA /* Products */,
 				BBE777382B20AD0100669EDA /* Frameworks */,
+				F19EC80105CC19B37A355010 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,20 +427,22 @@
 			path = SafeOBuddy;
 			sourceTree = "<group>";
 		};
-		BBE776B22B20AC6800669EDA /* TTLockFrameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BBE776B32B20AC6800669EDA /* TTLock.framework */,
-				BBE776B42B20AC6800669EDA /* TTLock.podspec */,
-			);
-			path = TTLockFrameworks;
-			sourceTree = "<group>";
-		};
 		BBE777382B20AD0100669EDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC584F9DDE7772DEE03FB338 /* Pods_SafeOBuddy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F19EC80105CC19B37A355010 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60537F06555620048134EF10 /* Pods-SafeOBuddy.debug.xcconfig */,
+				AA2FA0BAB5463A557736537A /* Pods-SafeOBuddy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,11 +463,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE776AF2B20AC1C00669EDA /* Build configuration list for PBXNativeTarget "SafeOBuddy" */;
 			buildPhases = (
+				2CAD0E67DB7D174165D33BC2 /* [CP] Check Pods Manifest.lock */,
 				BBE776A32B20AC1C00669EDA /* Headers */,
 				BBE776A42B20AC1C00669EDA /* Sources */,
 				BBE776A52B20AC1C00669EDA /* Frameworks */,
 				BBE776A62B20AC1C00669EDA /* Resources */,
-				BBE7773B2B20AD0100669EDA /* Embed Frameworks */,
+				BBE778412B20BA5400669EDA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -516,11 +517,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE776B62B20AC6800669EDA /* TTLock.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CAD0E67DB7D174165D33BC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeOBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBE776A42B20AC1C00669EDA /* Sources */ = {
@@ -779,6 +804,7 @@
 		};
 		BBE776B02B20AC1C00669EDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60537F06555620048134EF10 /* Pods-SafeOBuddy.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -791,7 +817,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/TTLockFrameworks",
+					"$(PROJECT_DIR)/SafeOBuddy",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -820,6 +846,7 @@
 		};
 		BBE776B12B20AC1C00669EDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA2FA0BAB5463A557736537A /* Pods-SafeOBuddy.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -832,7 +859,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/TTLockFrameworks",
+					"$(PROJECT_DIR)/SafeOBuddy",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
