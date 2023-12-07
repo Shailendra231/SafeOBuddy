@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct Domain {
     
     static let baseUrl = "https://vehicletrack.membocool.com/ConService.aspx"

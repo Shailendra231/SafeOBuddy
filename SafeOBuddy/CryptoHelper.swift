@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class CryptoHelper {
     
     private static let key = "safe@GCKS@#^wji@";

@@ -47,10 +47,15 @@ public class Safeobuddy
             default:
                 
                 guard let decrypt = CryptoHelper.decrypt(input: resultValue ?? "") else {return}
+              
                 let jsonData = decrypt.data(using: .utf8)
+                
+                guard let value = jsonData, value.count != 0, value.isEmpty != true else {   complition([String : Any]()  , "Data is nil"); return }
+
                 let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableLeaves)
                 
                 if let dataDict = dictionary as? [String : Any] {
+                    
                     
                     if let valueDic = dataDict["loginvalidation"] as? [[String : Any]] {
                         
@@ -149,7 +154,11 @@ public class Safeobuddy
             default:
                 
                 guard let decrypt = CryptoHelper.decrypt(input: resultValue ?? "") else {return}
+                
                 let jsonData = decrypt.data(using: .utf8)
+                
+                guard let value = jsonData, value.count != 0, value.isEmpty != true else { complition([[String : Any]]()  , "Data is nil"); return }
+                
                 let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableLeaves)
                 
                 if let dataDict = dictionary as? [String : Any] {
@@ -177,17 +186,20 @@ public class Safeobuddy
         formatter.dateFormat = "MM/dd/yyyy"
         
         // Add one month to the current date
-        let nextMonth = calendar.date(byAdding: .month, value: 1, to: date)!
+        let month = Calendar.current.date(byAdding: .month, value: -1, to: date)!
         
-        let fromDate = formatter.string(from: date)
-        let toDate = formatter.string(from: nextMonth)
+        let fromDate = formatter.string(from: month)
+        let toDate = formatter.string(from: date)
         
         let uid = UserDefaults.standard.value(forKey: "uid") as! String
         
-        let paramter:[String:Any] = ["method":"GetVehicle_Lock_Summary", "FromDate":"\(fromDate)", "ToDate":"\(toDate)", "VehicleNumber":"\(deviceName)","DeviceId":"\(deviceID)", "contactid":"\(uid)", "val1":"", "val2":""]
+        let parameter = [String:Any]()
+            
         
+        let parm = "?method=GetVehicle_Lock_Summary&FromDate=\(fromDate)&ToDate=\(toDate)&VehicleNumber=\(deviceName)&DeviceId=\(deviceID)&contactid=\(uid)&val1=&val2="
+
         
-        Networking().callingPostAPI(url: "\(Domain.baseUrl)", parameter: paramter) { resultValue, message in
+        Networking().callingPostAPI(url: "\(Domain.baseUrl)\(parm)", parameter: parameter) { resultValue, message in
             
             switch message
             {
@@ -199,6 +211,9 @@ public class Safeobuddy
             default:
                 
                 let jsonData = resultValue?.data(using: .utf8)
+                
+                guard let value = jsonData, value.count != 0, value.isEmpty != true else { complition([[String : Any]]()  , "Data is nil"); return }
+                
                 let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableLeaves)
                 
                 if let data = dictionary as? [String: Any] {
@@ -213,16 +228,18 @@ public class Safeobuddy
     }
     
     
+    
     public static func getFilterDeviceRecord(deviceName: String, deviceID: String, fromDate: String, todayDate: String,  complition: @escaping (_ resultValue: [[String:Any]], _ errorMessage: String) -> Void)
     {
         guard validateSession(date: Date().timeIntervalSince1970) else {complition([[String : Any]](), "Your session is expired."); return}
-
         
         let uid = UserDefaults.standard.value(forKey: "uid") as! String
         
-        let paramter:[String:Any] = ["method":"GetVehicle_Lock_Summary", "FromDate":"\(todayDate)", "ToDate":"\(fromDate)", "VehicleNumber":"\(deviceName)","DeviceId":"\(deviceID)", "contactid":"\(uid)", "val1":"", "val2":""]
+        let parameter = [String:Any]()
+                
+        let parm = "?method=GetVehicle_Lock_Summary&FromDate=\(fromDate)&ToDate=\(todayDate)&VehicleNumber=\(deviceName)&DeviceId=\(deviceID)&contactid=\(uid)&val1=&val2="
         
-        Networking().callingPostAPI(url: "\(Domain.baseUrl)", parameter: paramter) { resultValue, message in
+        Networking().callingPostAPI(url: "\(Domain.baseUrl)\(parm)", parameter: parameter) { resultValue, message in
             
             switch message
             {
@@ -234,6 +251,9 @@ public class Safeobuddy
             default:
                 
                 let jsonData = resultValue?.data(using: .utf8)
+                
+                guard let value = jsonData, value.count != 0, value.isEmpty != true else { complition([[String : Any]]()  , "Data is nil"); return }
+                
                 let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableLeaves)
                 
                 if let data = dictionary as? [String: Any] {
