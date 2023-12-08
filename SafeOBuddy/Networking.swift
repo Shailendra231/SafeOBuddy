@@ -9,12 +9,12 @@ import Foundation
 
 struct Networking
 {
-     func callingGetAPI(url:String?, complition: @escaping(_ resultValue: String?, _ message: String?)->Void)
+     func callingGetAPI(url:String?, complition: @escaping(_ respponse: String?, _ message: String?, _ statusCode: String?)->Void)
     {
        
         // Specify the url for get request
         guard let url = URL(string: url!) else {
-            complition(nil,"Invalid URL")
+            complition(nil,"Invalid URL", "404")
             return
         }
         
@@ -26,7 +26,7 @@ struct Networking
             // Check for errors
             if let error = error
             {
-                complition("error","\(error.localizedDescription)")
+                complition("error","\(error.localizedDescription)", "100")
                 return
             }
             
@@ -34,7 +34,7 @@ struct Networking
             if let resultString = String(data: data!, encoding: .utf8)
             {
                 print("Response: \(resultString)")
-                complition("\(resultString)","success")
+                complition("\(resultString)","success", "106")
             }
         }
         
@@ -43,12 +43,12 @@ struct Networking
     
     
     
-    func callingPostAPI(url:String?, parameter:[String:Any], complition: @escaping(_ resultValue: String?, _ message: String?) ->Void)
+    func callingPostAPI(url:String?, parameter:[String:Any], complition: @escaping(_ respponse: String, _ message: String, _ statusCode: String) ->Void)
     {
         
         // Specify the url for get request
         guard let url = URL(string: url!) else {
-            complition(nil,"Invalid URL")
+            complition("","Invalid URL", "404")
             return
         }
         
@@ -73,7 +73,7 @@ struct Networking
             // Check for errors
             if let error = error
             {
-                complition("error","\(error.localizedDescription)")
+                complition("error","\(error.localizedDescription)", "100")
                 return
             }
            
@@ -81,7 +81,7 @@ struct Networking
             if let resultString = String(data: data!, encoding: .utf8)
             {
                 print("Response: \(resultString)")
-                complition("\(resultString)","success")
+                complition("\(resultString)","success", "106")
             }
         }
         
